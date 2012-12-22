@@ -101,7 +101,7 @@ def db_list(user=None, host=None, port=None, runas=None):
     (user, host, port) = _connection_defaults(user, host, port)
 
     ret = []
-    query = """SELECT datname as "Name", pga.rolname as "Owner", """ \ 
+    query = """SELECT datname as "Name", pga.rolname as "Owner", """ \
     """pg_encoding_to_char(encoding) as "Encoding", datcollate as "Collate", datctype as "Ctype", """ \
     """datacl as "Access privileges" FROM pg_database pgd, pg_authid pga WHERE pga.oid = pgd.datdba"""
 
